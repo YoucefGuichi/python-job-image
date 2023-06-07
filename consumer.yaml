@@ -1,0 +1,16 @@
+apiVersion: v1                                                                                                                                                                             
+kind: Pod                                                                                                                                                                                  
+metadata:                                                                                                                                                                                                                                                                                                                            
+  labels:                                                                                                                                                                                  
+    run: rabbitmq-queue-consumer                                                                                                                                                                  
+  name: rabbitmq-queue-consumer                                                                                                                                                                     
+  namespace: rabbits                                                                                                                                                                                                                                                                                                                      
+spec:                                                                                                                                                                                      
+  containers:                                                                                                                                                                              
+  - image: youcefv123/rabbitmq-consumer:0.0.8                                                                                                                                                                                                                                                                                                      
+    name: queue-consumer    
+    command:
+    - sh 
+    - -c
+    - python3 main.py                                                                                                                                                      
+    resources: {}                                                                                                                                                                                                                                                                                                                                                 
